@@ -1,0 +1,55 @@
+c++ -Wall -std=c++11 -O3 -fPIC -I/home/cz/science/HEPtool_install/madanalysis5/tools/ -I./ -pthread -std=c++17 -m64 -I/home/cz/science/root/build/include -o Main/main.o -c Main/main.cpp
+c++ -Wall -std=c++11 -O3 -fPIC -I/home/cz/science/HEPtool_install/madanalysis5/tools/ -I./ -pthread -std=c++17 -m64 -I/home/cz/science/root/build/include -o SampleAnalyzer/User/Analyzer/user.o -c SampleAnalyzer/User/Analyzer/user.cpp
+SampleAnalyzer/User/Analyzer/user.cpp: In member function ‘virtual MAbool MA5::user::Initialize(const MA5::Configuration&, const std::map<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >&)’:
+SampleAnalyzer/User/Analyzer/user.cpp:19:20: error: no matching function for call to ‘MA5::RegionSelectionManager::AddCut(const char [12], std::string [0])’
+   19 |   Manager()->AddCut("1_MET > 5.0", RNc1);
+      |   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/Analyzer/AnalyzerBase.h:40,
+                 from ./SampleAnalyzer/User/Analyzer/user.h:4,
+                 from SampleAnalyzer/User/Analyzer/user.cpp:1:
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:178:27: note: candidate: ‘template<int NRS> void MA5::RegionSelectionManager::AddCut(const std::string&, const std::string (&)[NRS])’
+  178 |   template <int NRS> void AddCut(const std::string&name, std::string const(&RSnames)[NRS])
+      |                           ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:178:27: note:   template argument deduction/substitution failed:
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:153:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&)’
+  153 |   void AddCut(const std::string&name)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:153:8: note:   candidate expects 1 argument, 2 provided
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:169:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&, const std::string&)’
+  169 |   void AddCut(const std::string&name, const std::string &RSname)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:169:58: note:   no known conversion for argument 2 from ‘std::string [0]’ {aka ‘std::__cxx11::basic_string<char> [0]’} to ‘const std::string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+  169 |   void AddCut(const std::string&name, const std::string &RSname)
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:219:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&, std::vector<std::__cxx11::basic_string<char> >)’
+  219 |   void AddCut(const std::string&name, std::vector<std::string> SRnames)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:219:64: note:   no known conversion for argument 2 from ‘std::string [0]’ {aka ‘std::__cxx11::basic_string<char> [0]’} to ‘std::vector<std::__cxx11::basic_string<char> >’
+  219 |   void AddCut(const std::string&name, std::vector<std::string> SRnames)
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+SampleAnalyzer/User/Analyzer/user.cpp:21:20: error: no matching function for call to ‘MA5::RegionSelectionManager::AddCut(const char [16], std::string [0])’
+   21 |   Manager()->AddCut("2_N ( j ) = 4.0", RNc2);
+      |   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:178:27: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&, const std::string (&)[NRS]) [with int NRS = 0; std::string = std::__cxx11::basic_string<char>]’
+  178 |   template <int NRS> void AddCut(const std::string&name, std::string const(&RSnames)[NRS])
+      |                           ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:178:77: note:   no known conversion for argument 2 from ‘std::string [0]’ {aka ‘std::__cxx11::basic_string<char> [0]’} to ‘const std::string (&)[0]’ {aka ‘const std::__cxx11::basic_string<char> (&)[0]’}
+  178 |   template <int NRS> void AddCut(const std::string&name, std::string const(&RSnames)[NRS])
+      |                                                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:153:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&)’
+  153 |   void AddCut(const std::string&name)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:153:8: note:   candidate expects 1 argument, 2 provided
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:169:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&, const std::string&)’
+  169 |   void AddCut(const std::string&name, const std::string &RSname)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:169:58: note:   no known conversion for argument 2 from ‘std::string [0]’ {aka ‘std::__cxx11::basic_string<char> [0]’} to ‘const std::string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+  169 |   void AddCut(const std::string&name, const std::string &RSname)
+      |                                       ~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:219:8: note: candidate: ‘void MA5::RegionSelectionManager::AddCut(const std::string&, std::vector<std::__cxx11::basic_string<char> >)’
+  219 |   void AddCut(const std::string&name, std::vector<std::string> SRnames)
+      |        ^~~~~~
+/home/cz/science/HEPtool_install/madanalysis5/tools/SampleAnalyzer/Process/RegionSelection/RegionSelectionManager.h:219:64: note:   no known conversion for argument 2 from ‘std::string [0]’ {aka ‘std::__cxx11::basic_string<char> [0]’} to ‘std::vector<std::__cxx11::basic_string<char> >’
+  219 |   void AddCut(const std::string&name, std::vector<std::string> SRnames)
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [Makefile:101：SampleAnalyzer/User/Analyzer/user.o] 错误 1
